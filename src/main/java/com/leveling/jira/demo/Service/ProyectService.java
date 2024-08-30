@@ -27,29 +27,6 @@ public class ProyectService implements IProyectService {
     @Autowired
     IStatusService statusService;
 
-    /*
-     * public List<Proyect> filtrarProyectosPorFecha(LocalDate startDate, LocalDate
-     * endDate) {
-     * // Llama al método del repositorio y maneja el resultado
-     * return proyectRepository.filtrarProyectosPorFecha(startDate, endDate);
-     * 
-     * // Si no se encuentran resultados, lanzar una excepción o manejar el caso
-     * según
-     * // sea necesario
-     * 
-     * }
-     * 
-     * @Transactional
-     * public List<Proyect> filtrarProyectos(String name, Long statusId, String
-     * category, String iconPath,
-     * LocalDate startDate, LocalDate endDate) {
-     * // Aquí se llama al repositorio con los parámetros de filtrado
-     * return proyectRepository.filtrarProyectos(name, statusId, category, iconPath,
-     * startDate, endDate)
-     * .orElseThrow();
-     * }
-     */
-
     @Transactional
     @Override
     public Proyect save(ProyectDTO proyect) {
@@ -86,7 +63,6 @@ public class ProyectService implements IProyectService {
             throw new IllegalArgumentException("El ID del proyecto es nulo");
         }
 
-        // verifificar linea de seucencia
         Proyect proyectBD = proyectRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Proyecto no encontrado"));
 
@@ -109,9 +85,6 @@ public class ProyectService implements IProyectService {
                     .orElseThrow(() -> new IllegalArgumentException("Status no encontrado"));
             proyectBD.setStatus(estado);
         }
-
-        // AGREGAR QUITAR AL USUARIO DE LA LISTA DE USUARIOS DEL PAIS DE SER NECESARIO
-        // -> VERIFICAR
 
         return proyectRepository.save(proyectBD);
     }

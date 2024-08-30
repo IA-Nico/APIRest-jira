@@ -41,11 +41,11 @@ public class UserService implements IUserService {
         Country pais = countryService.findById(user.getCountry_id())
                 .orElseThrow(() -> new IllegalArgumentException("País no encontrado"));
 
-        String hashedPassword = passwordEncoder.encode(user.getPassword()); // Encriptamos la contraseña
+        String hashedPassword = passwordEncoder.encode(user.getPassword());
 
         User nuevoUsuario = new User(
                 user.getEmail(),
-                hashedPassword, // Guardamos la contraseña encriptada
+                hashedPassword,
                 user.getName(),
                 user.getLastname(),
                 user.getCompanyName(),
@@ -86,9 +86,6 @@ public class UserService implements IUserService {
                     .orElseThrow(() -> new IllegalArgumentException("País no encontrado"));
             usuarioBD.setCountry(pais);
         }
-
-        // Aquí podrías añadir lógica adicional para gestionar la lista de usuarios del
-        // país
 
         return userRepository.save(usuarioBD);
     }
@@ -175,7 +172,6 @@ public class UserService implements IUserService {
         String encryptedPassword = passwordEncoder.encode(newPassword);
         user.setPassword(encryptedPassword);
 
-        // Limpiar el token y su fecha de expiración
         user.setResetPasswordToken(null);
         user.setRestPasswordExpired(null);
 

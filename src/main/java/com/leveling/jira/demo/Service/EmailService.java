@@ -15,7 +15,6 @@ public class EmailService {
 
     public void sendPasswordResetEmail(User user, String token) {
 
-        // puerto correspondiente -> probar con valor obtenido del properties
         String url = "http://localhost:8080/auth/reset-password?token=" + token;
         String message = "Para restablecer tu contraseña, haz clic en el siguiente enlace: " + url;
 

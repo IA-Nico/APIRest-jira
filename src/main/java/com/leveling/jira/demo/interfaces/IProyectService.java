@@ -21,13 +21,4 @@ public interface IProyectService {
 
     long count();
 
-    /*
-     * List<Proyect> filtrarProyectos(String name, Long statusId, String category,
-     * String iconPath,
-     * LocalDate startDate, LocalDate endDate);
-     * 
-     * List<Proyect> filtrarProyectosPorFecha(LocalDate startDate, LocalDate
-     * endDate);
-     */
-
 }

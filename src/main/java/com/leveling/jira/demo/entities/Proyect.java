@@ -20,7 +20,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "proyects")
 @Getter
 @Setter
-// @EqualsAndHashCode(exclude = "country")
 @NoArgsConstructor
 public class Proyect {
 
@@ -50,15 +49,6 @@ public class Proyect {
     // @JsonIgnore
     private Status status;
 
-    // Idea descartada
-    /*
-     * @Transient
-     * private int usuario_id;
-     * 
-     * @Transient
-     * private int status_id;
-     */
-
     public Proyect(String name, String description, String category, String iconPath, LocalDate startDate,
             LocalDate endDate, boolean shared) {
         this.name = name;
@@ -69,21 +59,5 @@ public class Proyect {
         this.endDate = endDate;
         this.shared = shared;
     }
-
-    /*
-     * public Long getUsuario_id() {
-     * if (this.user != null)
-     * return user.getId();
-     * 
-     * return Long.valueOf(usuario_id);
-     * };
-     * 
-     * public Long getSatus_id() {
-     * if (this.status != null)
-     * return status.getId();
-     * 
-     * return Long.valueOf(status_id);
-     * };
-     */
 
 }

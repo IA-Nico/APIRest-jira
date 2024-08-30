@@ -10,7 +10,6 @@ import com.leveling.jira.demo.DTO.UserDTO;
 import com.leveling.jira.demo.entities.User;
 import com.leveling.jira.demo.interfaces.IUserService;
 import com.leveling.jira.demo.jwt.JwtService;
-import com.leveling.jira.demo.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 

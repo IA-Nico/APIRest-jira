@@ -29,34 +29,6 @@ public class ProyectRestController {
     @Autowired
     FiltradoService filtradoService;
 
-    // NO FUNCIONA CON JPQL O QUERIES NATIVAS DEL REPOSITORY
-
-    /*
-     * @GetMapping("/filtrar")
-     * public ResponseEntity<List<Proyect>> filtrarProyectos(
-     * 
-     * @RequestParam(value = "name", required = false) String name,
-     * 
-     * @RequestParam(value = "statusId", required = false) Long statusId,
-     * 
-     * @RequestParam(value = "category", required = false) String category,
-     * 
-     * @RequestParam(value = "iconPath", required = false) String iconPath,
-     * 
-     * @RequestParam(value = "startDate", required = false) LocalDate startDate,
-     * 
-     * @RequestParam(value = "endDate", required = false) LocalDate endDate) {
-     * 
-     * // Llama al servicio para filtrar los proyectos con los parámetros recibidos
-     * List<Proyect> proyectosFiltrados = proyectService.filtrarProyectos(name,
-     * statusId, category, iconPath,
-     * startDate,
-     * endDate);
-     * 
-     * return ResponseEntity.ok(proyectosFiltrados);
-     * }
-     */
-
     @GetMapping("/filtro")
     public List<Proyect> getProyectosPorFecha(
             @RequestParam(value = "name", required = false) String name,

@@ -9,7 +9,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -65,10 +64,6 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private Set<Proyect> proyects;
 
-    // idea descartada
-    // @Transient
-    // private int country_id;
-
     public User(String email, String password, String name, String lastname, String companyName, String position,
             String phoneNumber) {
         this.email = email;
@@ -99,14 +94,5 @@ public class User implements UserDetails {
 
         return this.email;
     }
-
-    /*
-     * public Long getCountry_id() {
-     * if (this.country != null)
-     * return country.getId();
-     * 
-     * return Long.valueOf(country_id);
-     * };
-     */
 
 }
