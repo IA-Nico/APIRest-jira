@@ -1,0 +1,1 @@
+API para prueba ténica con uso de JWT y cambio de contraseña por medio de confirmacion de email
